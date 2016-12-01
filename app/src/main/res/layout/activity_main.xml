@@ -57,6 +57,7 @@
             android:layout_weight="1"
             android:clickable="true"
             android:background="?android:selectableItemBackground"
+            android:id="@+id/aquarius_block"
             android:layout_height="match_parent">
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -83,19 +84,14 @@
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:clickable="true"
+            android:id="@+id/pisces_block"
             android:background="?android:selectableItemBackground"
             android:layout_height="match_parent">
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_centerHorizontal="true"
-                    android:src="@drawable/pisces"
-                    android:background="@null"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:id="@+id/pisces"/>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -104,6 +100,15 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:gravity="center"/>
+
+                <ImageView
+                    android:src="@drawable/pisces"
+                    android:background="@null"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/pisces"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
             </RelativeLayout>
         </RelativeLayout>
     </LinearLayout>
@@ -117,6 +122,7 @@
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:clickable="true"
+            android:id="@+id/aries_block"
             android:background="?android:selectableItemBackground"
             android:layout_height="match_parent">
             <RelativeLayout
@@ -146,6 +152,7 @@
             android:layout_weight="1"
             android:clickable="true"
             android:background="?android:selectableItemBackground"
+            android:id="@+id/taurus_block"
             android:layout_height="match_parent">
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -172,6 +179,7 @@
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:clickable="true"
+            android:id="@+id/gemini_block"
             android:background="?android:selectableItemBackground"
             android:layout_height="match_parent">
             <RelativeLayout
@@ -205,6 +213,7 @@
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:clickable="true"
+            android:id="@+id/cancer_block"
             android:background="?android:selectableItemBackground"
             android:layout_height="match_parent">
             <RelativeLayout
@@ -232,6 +241,7 @@
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:clickable="true"
+            android:id="@+id/leo_block"
             android:background="?android:selectableItemBackground"
             android:layout_height="match_parent">
             <RelativeLayout
@@ -259,6 +269,7 @@
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:clickable="true"
+            android:id="@+id/virgo_block"
             android:background="?android:selectableItemBackground"
             android:layout_height="match_parent">
             <RelativeLayout
@@ -292,6 +303,7 @@
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:clickable="true"
+            android:id="@+id/libra_block"
             android:background="?android:selectableItemBackground"
             android:layout_height="match_parent">
             <RelativeLayout
@@ -319,6 +331,7 @@
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:clickable="true"
+            android:id="@+id/scorpio_block"
             android:background="?android:selectableItemBackground"
             android:layout_height="match_parent">
             <RelativeLayout
@@ -346,6 +359,7 @@
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:clickable="true"
+            android:id="@+id/sagittarius_block"
             android:background="?android:selectableItemBackground"
             android:layout_height="match_parent">
             <RelativeLayout

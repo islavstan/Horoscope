@@ -6,12 +6,47 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.islavdroid.horoscope.DetailActivity;
 import com.islavdroid.horoscope.R;
+import com.islavdroid.horoscope.api.ApiClient;
+import com.islavdroid.horoscope.model.Horoscope;
+import com.islavdroid.horoscope.point.TodayPoint;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class WeekFragment extends Fragment {
+    @BindView(R.id.horoscope)
+    TextView horoscope;
+    @BindView(R.id.date) TextView date;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v= inflater.inflate(R.layout.fragment_week, container, false);
+        ButterKnife.bind(this, v);
+
+        final TodayPoint apiService = ApiClient.getHoroscope().create(TodayPoint.class);
+        Call<Horoscope> call =apiService.getWeekHoroscope(DetailActivity.sunsign);
+        call.enqueue(new Callback<Horoscope>() {
+            @Override
+            public void onResponse(Call<Horoscope> call, Response<Horoscope> response) {
+                Horoscope week =response.body();
+                String horoscopeText = week.getHoroscope();
+                String redactHoroscopeText =horoscopeText.replace("['","");
+
+                horoscope.setText(redactHoroscopeText);
+                date.setText(week.getWeek());
+
+            }
+
+            @Override
+            public void onFailure(Call<Horoscope> call, Throwable t) {
+
+            }
+        });
         return v;
     }}

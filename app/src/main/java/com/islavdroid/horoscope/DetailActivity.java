@@ -1,6 +1,7 @@
 package com.islavdroid.horoscope;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -10,6 +11,8 @@ import android.support.v7.widget.Toolbar;
 import com.islavdroid.horoscope.adapter.ViewPagerAdapter;
 
 public class DetailActivity extends AppCompatActivity {
+    public static String sunsign;
+    TabLayout tab_layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,36 +20,40 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        TabLayout tab_layout = (TabLayout) findViewById(R.id.tab_layout);
+        tab_layout = (TabLayout) findViewById(R.id.tab_layout);
         tab_layout.addTab(tab_layout.newTab().setText("today"));
         tab_layout.addTab(tab_layout.newTab().setText("week"));
         tab_layout.addTab(tab_layout.newTab().setText("month"));
         tab_layout.addTab(tab_layout.newTab().setText("year"));
+        tab_layout.setTabGravity(TabLayout.GRAVITY_FILL);
         final ViewPager view_pager = (ViewPager) findViewById(R.id.pager);
-        view_pager.setOffscreenPageLimit(3);
+        // view_pager.setOffscreenPageLimit(3);
         final ViewPagerAdapter adapter = new ViewPagerAdapter
                 (getSupportFragmentManager(), tab_layout.getTabCount());
 
         view_pager.setAdapter(adapter);
 
-        view_pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        view_pager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tab_layout));
+        Intent intent = getIntent();
+        sunsign = intent.getStringExtra("sunsign");
+        setTitle(sunsign);
+        tab_layout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            public void onTabSelected(TabLayout.Tab tab) {
+                view_pager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
 
             }
 
             @Override
-            public void onPageSelected(int position) {
+            public void onTabReselected(TabLayout.Tab tab) {
 
             }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-                //switch (state){
-                   // case ViewPager.SCROLL_STATE_IDLE:
-                       // fab.showMenuButton(true);
-                      //  break;
-                }//}
         });
+
+
     }
 }
