@@ -47,6 +47,7 @@
                     android:layout_below="@+id/capricorn"
                     android:text="capricorn"
                     android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
                     android:textStyle="bold"
                     android:gravity="center"/>
             </RelativeLayout>
@@ -76,6 +77,7 @@
                     android:layout_below="@+id/aquarius"
                     android:text="aquarius"
                     android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
                     android:textStyle="bold"
                     android:gravity="center"/>
             </RelativeLayout>
@@ -98,6 +100,7 @@
                     android:layout_below="@+id/pisces"
                     android:text="pisces"
                     android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
                     android:textStyle="bold"
                     android:gravity="center"/>
 
@@ -142,6 +145,7 @@
                 android:layout_below="@+id/aries"
                 android:text="aries"
                 android:textSize="18sp"
+                android:textColor="@color/colorPrimary"
                 android:textStyle="bold"
                 android:gravity="center"/>
             </RelativeLayout>
@@ -170,6 +174,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/taurus"
                     android:text="taurus"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:gravity="center"/>
@@ -198,6 +203,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/gemini"
                     android:text="gemini"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:gravity="center"/>
@@ -232,6 +238,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/cancer"
                     android:text="cancer"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:gravity="center"/>
@@ -260,6 +267,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/leo"
                     android:text="leo"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:gravity="center"/>
@@ -288,6 +296,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/virgo"
                     android:text="virgo"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:gravity="center"/>
@@ -322,6 +331,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/libra"
                     android:text="libra"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:gravity="center"/>
@@ -350,6 +360,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/scorpio"
                     android:text="scorpio"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:gravity="center"/>
@@ -378,6 +389,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/sagittarius"
                     android:text="sagittarius"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:gravity="center"/>

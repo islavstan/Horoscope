@@ -13,7 +13,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/horoscope"
-    android:textSize="18sp"/>
+    android:textSize="20sp"/>
 
 <TextView
     android:layout_marginTop="15dp"
@@ -21,7 +21,7 @@
     android:layout_height="wrap_content"
     android:textColor="@color/gray"
     android:id="@+id/date"
-    android:textSize="14sp"
+    android:textSize="16sp"
     android:gravity="right"/>
 
 

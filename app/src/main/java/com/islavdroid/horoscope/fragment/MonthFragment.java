@@ -1,5 +1,6 @@
 package com.islavdroid.horoscope.fragment;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -31,7 +32,9 @@ public class MonthFragment  extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v= inflater.inflate(R.layout.fragment_month, container, false);
         ButterKnife.bind(this, v);
-
+       /* Typeface custom_font = Typeface.createFromAsset(getActivity().getAssets(),  "fonts/ArefRuqaa-Regular.ttf");
+        horoscope.setTypeface(custom_font);
+        date.setTypeface(custom_font);*/
         final TodayPoint apiService = ApiClient.getHoroscope().create(TodayPoint.class);
         Call<Horoscope> call =apiService.getMonthHoroscope(DetailActivity.sunsign);
         call.enqueue(new Callback<Horoscope>() {
@@ -39,7 +42,10 @@ public class MonthFragment  extends Fragment {
             public void onResponse(Call<Horoscope> call, Response<Horoscope> response) {
                 Horoscope month =response.body();
                 String horoscopeText = month.getHoroscope();
-                String redactHoroscopeText =horoscopeText.replace("['","");
+
+                String redactHoroscopeText =horoscopeText.replace("['","").replace("[u'","").replace("Ganesha","Astrologer");
+
+
 
                 horoscope.setText(redactHoroscopeText);
                 date.setText(month.getMonth());
