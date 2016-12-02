@@ -1,29 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+
     >
-<LinearLayout
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:padding="15dp"
-    android:layout_height="match_parent">
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/horoscope"
-    android:textSize="20sp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_above="@+id/banner"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:padding="15dp"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/horoscope"
+            android:textSize="20sp"/>
 
-<TextView
-    android:layout_marginTop="15dp"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:textColor="@color/gray"
-    android:id="@+id/date"
-    android:textSize="16sp"
-    android:gravity="right"/>
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray"
+            android:id="@+id/date"
+            android:textSize="16sp"
+            android:gravity="right"/>
 
 
-</LinearLayout>
+    </LinearLayout>
     </ScrollView>
+
+    <com.google.android.gms.ads.AdView
+
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/banner"
+        ads:adUnitId="@string/banner_id"
+        ads:adSize="SMART_BANNER">
+    </com.google.android.gms.ads.AdView>
+
+</RelativeLayout>

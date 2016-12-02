@@ -40,7 +40,8 @@ public class WeekFragment extends Fragment {
                 Horoscope week =response.body();
                 String horoscopeText = week.getHoroscope();
 
-                String redactHoroscopeText =horoscopeText.replace("['","").replace("[u'","").replace("Ganesha","Astrologer");
+                String redactHoroscopeText =horoscopeText.replace("['","").replace("[u'","").
+                        replace("Ganesha","Astrologer").replace("\\u"," ").replace("..",".");
                 horoscope.setText(redactHoroscopeText);
                 date.setText(week.getWeek());
 

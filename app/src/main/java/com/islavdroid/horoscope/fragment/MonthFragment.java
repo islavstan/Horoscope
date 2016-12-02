@@ -20,9 +20,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * Created by islav on 01.12.2016.
- */
 
 public class MonthFragment  extends Fragment {
     @BindView(R.id.horoscope)
@@ -43,7 +40,8 @@ public class MonthFragment  extends Fragment {
                 Horoscope month =response.body();
                 String horoscopeText = month.getHoroscope();
 
-                String redactHoroscopeText =horoscopeText.replace("['","").replace("[u'","").replace("Ganesha","Astrologer");
+                String redactHoroscopeText =horoscopeText.replace("['","").replace("[u'","").
+                        replace("Ganesha","Astrologer").replace("\\u"," ").replace("..",".");
 
 
 

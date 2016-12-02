@@ -39,7 +39,8 @@ public class YearFragment extends Fragment {
             public void onResponse(Call<Horoscope> call, Response<Horoscope> response) {
                 Horoscope year =response.body();
                 String horoscopeText = year.getHoroscope();
-                String redactHoroscopeText =horoscopeText.replace("['","").replace("[u'","").replace("Ganesha","Astrologer");
+                String redactHoroscopeText =horoscopeText.replace("['","").replace("[u'","").
+                        replace("Ganesha","Astrologer").replace("\\u"," ").replace("..",".");
 
 
 

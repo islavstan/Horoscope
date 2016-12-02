@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.islavdroid.horoscope.Ads;
 import com.islavdroid.horoscope.DetailActivity;
 import com.islavdroid.horoscope.R;
 import com.islavdroid.horoscope.api.ApiClient;
@@ -29,6 +30,7 @@ public class TodayFragment  extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v= inflater.inflate(R.layout.fragment_today, container, false);
         ButterKnife.bind(this, v);
+        Ads.showBanner(v);
       /*  Typeface custom_font = Typeface.createFromAsset(getActivity().getAssets(),  "fonts/ArefRuqaa-Regular.ttf");
         horoscope.setTypeface(custom_font);
         date.setTypeface(custom_font);*/
@@ -39,7 +41,8 @@ public class TodayFragment  extends Fragment {
             public void onResponse(Call<Horoscope> call, Response<Horoscope> response) {
                 Horoscope today =response.body();
                 String horoscopeText = today.getHoroscope();
-                String redactHoroscopeText =horoscopeText.replace("['","").replace("[u'","").replace("Ganesha","Astrologer");
+                String redactHoroscopeText =horoscopeText.replace("['","").replace("[u'","").
+                        replace("Ganesha","Astrologer").replace("\\u"," ").replace("..",".");
 
 
 
