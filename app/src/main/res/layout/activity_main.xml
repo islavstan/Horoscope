@@ -48,7 +48,6 @@
                     android:text="capricorn"
                     android:textSize="18sp"
                     android:textColor="@color/colorPrimary"
-                    android:textStyle="bold"
                     android:gravity="center"/>
             </RelativeLayout>
         </RelativeLayout>
@@ -78,7 +77,7 @@
                     android:text="aquarius"
                     android:textSize="18sp"
                     android:textColor="@color/colorPrimary"
-                    android:textStyle="bold"
+
                     android:gravity="center"/>
             </RelativeLayout>
         </RelativeLayout>

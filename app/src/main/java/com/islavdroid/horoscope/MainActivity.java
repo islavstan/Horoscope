@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.RelativeLayout;
+
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -82,13 +85,24 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
 
 
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId()==R.id.notification){
+           Intent intent =new Intent(MainActivity.this,SettingActivity.class);
+            startActivity(intent);
+        }
+        return true;
+    }
     private void intent(String sunSign){
         Intent intent =new Intent(MainActivity.this,DetailActivity.class);
         intent.putExtra(sunsign,sunSign);
         startActivity(intent);
     }
-
-
 }

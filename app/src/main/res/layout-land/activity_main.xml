@@ -38,8 +38,8 @@
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/capricorn"
                     android:background="@null"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:id="@+id/capricorn"/>
                 <TextView
                     android:layout_width="match_parent"
@@ -68,8 +68,8 @@
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/aquarius"
                     android:background="@null"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:id="@+id/aquarius"/>
                 <TextView
                     android:layout_width="match_parent"
@@ -107,8 +107,8 @@
                 <ImageView
                     android:src="@drawable/pisces"
                     android:background="@null"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:id="@+id/pisces"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true" />
@@ -136,8 +136,8 @@
             android:layout_centerHorizontal="true"
             android:src="@drawable/aries"
             android:background="@null"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:id="@+id/aries"/>
             <TextView
                 android:layout_width="match_parent"
@@ -166,8 +166,8 @@
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/taurus"
                     android:background="@null"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:id="@+id/taurus"/>
                 <TextView
                     android:layout_width="match_parent"
@@ -195,8 +195,8 @@
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/gemini"
                     android:background="@null"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:id="@+id/gemini"/>
                 <TextView
                     android:layout_width="match_parent"
@@ -230,8 +230,8 @@
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/cancer"
                     android:background="@null"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:id="@+id/cancer"/>
                 <TextView
                     android:layout_width="match_parent"
@@ -259,8 +259,8 @@
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/leo"
                     android:background="@null"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:id="@+id/leo"/>
                 <TextView
                     android:layout_width="match_parent"
@@ -288,8 +288,8 @@
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/virgo2"
                     android:background="@null"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:id="@+id/virgo"/>
                 <TextView
                     android:layout_width="match_parent"
@@ -323,8 +323,8 @@
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/libra"
                     android:background="@null"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:id="@+id/libra"/>
                 <TextView
                     android:layout_width="match_parent"
@@ -352,8 +352,8 @@
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/scorpio"
                     android:background="@null"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:id="@+id/scorpio"/>
                 <TextView
                     android:layout_width="match_parent"
@@ -381,8 +381,8 @@
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/sagittarius"
                     android:background="@null"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:id="@+id/sagittarius"/>
                 <TextView
                     android:layout_width="match_parent"
