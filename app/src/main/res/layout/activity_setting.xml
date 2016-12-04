@@ -66,10 +66,6 @@
 
         android:padding="@dimen/activity_horizontal_margin">
 
-
-
-
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -114,27 +110,30 @@
             android:text="Notification time"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="#212121"/>
-        <Switch
-            android:id="@+id/bell_sounds"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:theme="@style/ToggleSwitchTheme"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:background="?selectableItemBackgroundBorderless"
-            android:padding="6dp"
-
-            />
+       <EditText
+           android:layout_width="100dp"
+           android:id="@+id/timeEdit"
+           android:layout_height="wrap_content"
+           android:layout_alignParentEnd="true"
+           android:layout_alignParentRight="true"
+           android:layout_centerVertical="true"
+           android:layout_marginLeft="@dimen/activity_horizontal_margin"
+           android:layout_marginStart="@dimen/activity_horizontal_margin"
+           android:padding="6dp"
+           android:inputType="none"
+           android:focusableInTouchMode="false"
+           android:cursorVisible="false"
+           android:hint="time"
+           />
 
     </RelativeLayout>
+
     </LinearLayout>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
        android:text="save"
+        android:id="@+id/saveBtn"
         android:layout_alignParentBottom="true"
       android:textColor="#FFF"
         android:background="@color/colorPrimary"
