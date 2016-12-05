@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
@@ -70,11 +71,19 @@ public class SettingActivity  extends AppCompatActivity {
         PreferenceHelper.getInstance().init(getApplicationContext());
         preferenceHelper = PreferenceHelper.getInstance();
         notifySwitch.setChecked(preferenceHelper.getBoolean(PreferenceHelper.NOTIFICATION));
+        if(notifySwitch.isChecked()){
+            timeEdit.setText((preferenceHelper.getString(PreferenceHelper.TIME)));
+        }
       //  toolbar.getMenu().clear();
         String[] data = {"capricorn", "aquarius", "pisces", "aries", "taurus","gemini","cancer","leo","virgo","libra","scorpio","sagittarius"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+
+        int a =preferenceHelper.getInt(PreferenceHelper.SUNSIGN);
+        Log.v("int a = ",a+"");
+        spinner.setSelection(a);
+
         calendar =Calendar.getInstance();
 
 
@@ -83,8 +92,12 @@ public class SettingActivity  extends AppCompatActivity {
 
     }
 
-
-  /*  @Override
+    @Override
+    protected void onResume() {
+        super.onResume();
+       // spinner.setSelection(preferenceHelper.getInt(PreferenceHelper.SUNSIGN));
+    }
+    /*  @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         if(notifyOn) {
             getMenuInflater().inflate(R.menu.menu_setting, menu);
@@ -106,7 +119,7 @@ public class SettingActivity  extends AppCompatActivity {
     public void onNotify(){
         if(notifySwitch.isChecked()){
             //сохраняем состояние флага
-            preferenceHelper.putBoolean(PreferenceHelper.NOTIFICATION,notifySwitch.isChecked());
+
            // Toast.makeText(this,"notification enabled",Toast.LENGTH_SHORT).show();
             notifyOn=true;
             sunsignTextview.setTextColor(getResources().getColor(R.color.black));
@@ -118,6 +131,7 @@ public class SettingActivity  extends AppCompatActivity {
         }else{
          //   Toast.makeText(this,"notification disabled",Toast.LENGTH_SHORT).show();
             notifyOn=false;
+            preferenceHelper.putBoolean(PreferenceHelper.NOTIFICATION,notifySwitch.isChecked());
             sunsignTextview.setTextColor(getResources().getColor(R.color.gray));
             timeTextview.setTextColor(getResources().getColor(R.color.gray));
             spinner.setEnabled(false);
@@ -152,12 +166,21 @@ public class SettingActivity  extends AppCompatActivity {
 
     @OnClick(R.id.saveBtn)
     public void pushOn(){
-
         //возвращает объект класса Calendar для региональных данных и часового пояса по умолчанию
-
         sunSign = spinner.getSelectedItem().toString();
         calendar.set(Calendar.HOUR_OF_DAY,mHour);
         calendar.set(Calendar.MINUTE,mMinute);
+
+        preferenceHelper.putBoolean(PreferenceHelper.NOTIFICATION,notifySwitch.isChecked());
+        preferenceHelper.putInt(PreferenceHelper.SUNSIGN,spinner.getSelectedItemPosition());
+        Log.v("log",spinner.getSelectedItemPosition()+"");
+        preferenceHelper.putString(PreferenceHelper.TIME,mHour+":"+mMinute);
+
+
+
+
+
+
         Intent intent=new Intent(getApplicationContext(),Service.class);
         intent.putExtra(Service.EXTRA_MESSAGE,
                 sunSign);
