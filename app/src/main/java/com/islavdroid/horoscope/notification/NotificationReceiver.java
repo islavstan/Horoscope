@@ -38,7 +38,7 @@ public class NotificationReceiver  extends BroadcastReceiver {
         PendingIntent pendingIntent =PendingIntent.getActivity(context,100,repeating_intent,PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context).
                 setContentIntent(pendingIntent).setSmallIcon(R.drawable.aries).
-                setContentTitle("Рак").setContentText(redactHoroscopeText);
+                setContentTitle("Рак").setContentText("ghbff");
         notificationManager.notify(100,builder.build());
 
 

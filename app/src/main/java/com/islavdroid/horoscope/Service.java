@@ -42,6 +42,8 @@ public class Service extends IntentService  {
          sunSign = intent.getStringExtra(EXTRA_MESSAGE);
         hour=intent.getIntExtra(EXTRA_HOUR,0);
         minute=intent.getIntExtra(EXTRA_MINUTE,0);
+        Log.v("tag",hour+"");
+        Log.v("tag",minute+"");
         calendar=Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY,hour);
         calendar.set(Calendar.MINUTE,minute);
@@ -99,8 +101,6 @@ public class Service extends IntentService  {
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(NOTIFICATION_ID, notification);
-        AlarmManager alarmManager =(AlarmManager)getSystemService(ALARM_SERVICE);
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
 
 
 

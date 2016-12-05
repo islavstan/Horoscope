@@ -150,19 +150,19 @@ public class SettingActivity  extends AppCompatActivity {
         sunSign = spinner.getSelectedItem().toString();
         calendar.set(Calendar.HOUR_OF_DAY,mHour);
         calendar.set(Calendar.MINUTE,mMinute);
-        Intent intent=new Intent(SettingActivity.this,Service.class);
+        Intent intent=new Intent(getApplicationContext(),Service.class);
         intent.putExtra(Service.EXTRA_MESSAGE,
                 sunSign);
         intent.putExtra(Service.EXTRA_HOUR,mHour);
         intent.putExtra(Service.EXTRA_MINUTE,mMinute);
-        startService(intent);
+        //startService(intent);
       //  Intent intent =new Intent(getApplicationContext(),NotificationReceiver.class);
-       // PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),100,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getService(getApplicationContext(),100,intent,PendingIntent.FLAG_UPDATE_CURRENT);
         //Служба Alarm Service используется для отправки пользователю разовых или повторяющихся сообщений в заданное время
-       // AlarmManager alarmManager =(AlarmManager)getSystemService(ALARM_SERVICE);
+       AlarmManager alarmManager =(AlarmManager)getSystemService(ALARM_SERVICE);
         //setRepeating() - задаёт повторяющиеся сигнализации с фиксированным временным интервалом
         //RTC_WAKEUP - выводит устройство из режима ожидания для запуска ожидающего намерения в указанное время.
-        //alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
 
 
     }
