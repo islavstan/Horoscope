@@ -45,7 +45,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="#212121"/>
         <Switch
-            android:id="@+id/coming_message"
+            android:id="@+id/notifySwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -74,8 +74,9 @@
             android:layout_marginTop="8dp"
             android:layout_centerVertical="true"
             android:text="Your sunsign"
+            android:id="@+id/sunsignTextview"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="#212121"/>
+            android:textColor="@color/gray"/>
         <Spinner
             android:id="@+id/spinner"
             android:layout_alignParentEnd="true"
@@ -108,8 +109,9 @@
             android:layout_marginTop="8dp"
             android:layout_centerVertical="true"
             android:text="Notification time"
+            android:id="@+id/timeTextview"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="#212121"/>
+            android:textColor="@color/gray"/>
        <EditText
            android:layout_width="100dp"
            android:id="@+id/timeEdit"
@@ -123,7 +125,7 @@
            android:inputType="none"
            android:focusableInTouchMode="false"
            android:cursorVisible="false"
-           android:hint="time"
+
            />
 
     </RelativeLayout>

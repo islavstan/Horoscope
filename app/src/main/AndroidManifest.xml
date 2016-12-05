@@ -29,6 +29,8 @@
             android:theme="@android:style/Theme.Translucent"/>
         <activity android:name=".SettingActivity"/>
         <receiver android:name=".notification.NotificationReceiver"/>
+        <service android:name=".Service"
+            android:exported="false"/>
     </application>
     
 

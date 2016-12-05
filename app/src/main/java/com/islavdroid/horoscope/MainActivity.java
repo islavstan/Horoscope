@@ -26,13 +26,14 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.libra_block) RelativeLayout libra_block;
     @BindView(R.id.scorpio_block) RelativeLayout scorpio_block;
     @BindView(R.id.sagittarius_block) RelativeLayout sagittarius_block;
+    @BindView(R.id.toolbar) Toolbar toolbar;
     private final String sunsign ="sunsign";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
     }
 
