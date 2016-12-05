@@ -25,12 +25,12 @@ public class Service extends IntentService  {
     public static final String EXTRA_MESSAGE = "message";
     public static final String EXTRA_HOUR = "hour";
     public static final String EXTRA_MINUTE = "minute";
-     String redactHoroscopeText;
+     private String redactHoroscopeText;
     public static final int NOTIFICATION_ID = 999;
-    String sunSign;
-    int hour;
-    int minute;
-    Calendar calendar;
+    private String sunSign;
+    private int hour;
+    private int minute;
+    private Calendar calendar;
     public Service() {
         super("Service");
     }
@@ -73,7 +73,7 @@ public class Service extends IntentService  {
     }
 
 
-    private void showHoroscope( String sunsign) {
+    private void showHoroscope( String horoscope) {
 
 
         Intent intent = new Intent(this, DetailActivity.class);
@@ -94,7 +94,7 @@ public class Service extends IntentService  {
                 .setPriority(Notification.PRIORITY_MAX)
                 .setDefaults(Notification.DEFAULT_VIBRATE)
                 .setContentIntent(pendingIntent)
-                .setContentText(sunsign)
+                .setContentText(horoscope)
                 .build();
 
         //Вывести уведомление с использованием службы уведомлений Android

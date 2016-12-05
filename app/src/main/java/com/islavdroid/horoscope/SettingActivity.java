@@ -52,6 +52,7 @@ public class SettingActivity  extends AppCompatActivity {
     Calendar calendar;
     boolean notifyOn=false;
     public static String horoscopeText;
+    PreferenceHelper preferenceHelper;
     String sunSign;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +65,11 @@ public class SettingActivity  extends AppCompatActivity {
         spinner.setEnabled(false);
         timeEdit.setEnabled(false);
         saveBtn.setEnabled(false);
+
+
+        PreferenceHelper.getInstance().init(getApplicationContext());
+        preferenceHelper = PreferenceHelper.getInstance();
+        notifySwitch.setChecked(preferenceHelper.getBoolean(PreferenceHelper.NOTIFICATION));
       //  toolbar.getMenu().clear();
         String[] data = {"capricorn", "aquarius", "pisces", "aries", "taurus","gemini","cancer","leo","virgo","libra","scorpio","sagittarius"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data);
@@ -99,7 +105,9 @@ public class SettingActivity  extends AppCompatActivity {
     @OnCheckedChanged(R.id.notifySwitch)
     public void onNotify(){
         if(notifySwitch.isChecked()){
-            Toast.makeText(this,"notification enabled",Toast.LENGTH_SHORT).show();
+            //сохраняем состояние флага
+            preferenceHelper.putBoolean(PreferenceHelper.NOTIFICATION,notifySwitch.isChecked());
+           // Toast.makeText(this,"notification enabled",Toast.LENGTH_SHORT).show();
             notifyOn=true;
             sunsignTextview.setTextColor(getResources().getColor(R.color.black));
             timeTextview.setTextColor(getResources().getColor(R.color.black));
@@ -108,7 +116,7 @@ public class SettingActivity  extends AppCompatActivity {
             saveBtn.setEnabled(true);
 
         }else{
-            Toast.makeText(this,"notification disabled",Toast.LENGTH_SHORT).show();
+         //   Toast.makeText(this,"notification disabled",Toast.LENGTH_SHORT).show();
             notifyOn=false;
             sunsignTextview.setTextColor(getResources().getColor(R.color.gray));
             timeTextview.setTextColor(getResources().getColor(R.color.gray));
